@@ -1,17 +1,22 @@
 import React,{Component} from 'react'
 import {HashRouter,Switch,Redirect,Route} from 'react-router-dom'
 import CustomNav from './component/customNav'
+import ComponentImport from './utils/componentlmport'
 
-import Admin from './component/admin'
-import Login from './component/login'
-import Home from './component/home'
-import User from './component/user'
+const Login = ComponentImport(()=>import('./component/login'))
+const Admin = ComponentImport(()=>import('./component/admin'))
+const Home = ComponentImport(()=>import('./component/home'))
+const User = ComponentImport(()=>import('./component/user'))
+// import Admin from './component/admin'
+// // import Login from './component/login/load'
+// import Home from './component/home'
+// import User from './component/user'
 
 class RootRouter extends Component{
   render(){
     return(
       <HashRouter>
-        <CustomNav></CustomNav>
+        
         {/* 导航 */}
         {/* 路由渲染 */}
         <Switch>
@@ -20,6 +25,7 @@ class RootRouter extends Component{
           <Route path='/admin' render={()=>{
             return(
               <Admin>
+                <CustomNav></CustomNav>
                 <Route path='/admin/home' component={Home} />
                 <Route path='/admin/user' component={User} />
               </Admin>

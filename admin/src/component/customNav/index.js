@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom'
 import {Menu,Icon} from 'antd'
 
 let navData=[
-  {name:'首页',path:'/home'},
+  {name:'首页',path:'/admin/home'},
   {name:'设置',path:'/setting'},
   {name:'用户管理',
    path:'/user',
@@ -25,6 +25,9 @@ let navData=[
 const {SubMenu} = Menu
 
 class CustomNav extends Component{
+  jump = (path)=>{
+    this.props.history.push(path)
+  }
   renderItem=(data)=>{
     return data.map((item,index)=>{
       if(item.children){
@@ -36,7 +39,7 @@ class CustomNav extends Component{
         )
         
       }else{
-        return <Menu.Item>{item.name}</Menu.Item>
+        return <Menu.Item onClick={this.jump.bind(this,item.path)}>{item.name}</Menu.Item>
       }
       
 

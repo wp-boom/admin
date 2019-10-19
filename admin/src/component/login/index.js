@@ -13,6 +13,10 @@ class Login extends React.Component {
       if(err){
         message.error('输入信息有误请重试')
       }else{
+        this.$axios.get('/yapi/admin/login',{us:123456,ps:123})
+          .then((data)=>{
+            console.log(data)
+          })
         message.success('登录成功一秒以后跳转首页',1,()=>{
           this.props.history.push('/admin')
         })

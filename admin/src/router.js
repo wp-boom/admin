@@ -1,6 +1,5 @@
 import React,{Component} from 'react'
 import {HashRouter,Switch,Redirect,Route} from 'react-router-dom'
-import CustomNav from './component/customNav'
 import ComponentImport from './utils/componentlmport'
 
 const Login = ComponentImport(()=>import('./component/login'))
@@ -25,7 +24,6 @@ class RootRouter extends Component{
           <Route path='/admin' render={()=>{
             return(
               <Admin>
-                <CustomNav></CustomNav>
                 <Route path='/admin/home' component={Home} />
                 <Route path='/admin/user' component={User} />
               </Admin>

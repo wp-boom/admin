@@ -1,11 +1,22 @@
-import React from 'react';
+import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
 import RootRouter from './router'
-import 'antd/dist/antd.css'
+import {Provider} from 'react-redux'
+import Store from './store/store'
+import axios from './utils/axios'
+// import 'antd/dist/antd.css'
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<RootRouter />, document.getElementById('root'));
+Component.prototype.$axios=axios
+
+
+ReactDOM.render(
+  <Provider store={Store}> 
+  {/* provider 是将store对象挂载到根组件的context上下文上*/}
+    <RootRouter />
+  </Provider>
+, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

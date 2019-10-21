@@ -8,14 +8,15 @@ let navData=[
   {name:'用户管理',
    path:'/user',
    children:[
-     {name:'用户列表',path:'/user/list'},
-     {name:'用户删除',
-      path:'/user/derl',
-      children:[
-        {name:'用户列表',path:'/user/list'},
-        {name:'用户删除',path:'/user/derl'}
-      ]     
-      }
+     {name:'用户列表',path:'/admin/user/list'},
+     {name:'用户添加',path:'/admin/user/add'}
+    //  {name:'用户删除',
+    //   path:'/user/derl',
+    //   children:[
+    //     {name:'用户列表',path:'/user/list'},
+    //     {name:'用户删除',path:'/user/derl'}
+    //   ]     
+    //   }
    ] 
   }
 ]

@@ -5,7 +5,8 @@ import ComponentImport from './utils/componentlmport'
 const Login = ComponentImport(()=>import('./component/login'))
 const Admin = ComponentImport(()=>import('./component/admin'))
 const Home = ComponentImport(()=>import('./component/home'))
-const User = ComponentImport(()=>import('./component/user'))
+const UserList = ComponentImport(()=>import('./component/user'))
+const UserAdd = ComponentImport(()=>import('./component/userAdd'))
 // import Admin from './component/admin'
 // // import Login from './component/login/load'
 // import Home from './component/home'
@@ -25,7 +26,8 @@ class RootRouter extends Component{
             return(
               <Admin>
                 <Route path='/admin/home' component={Home} />
-                <Route path='/admin/user' component={User} />
+                <Route path='/admin/user/list' component={UserList} />
+                <Route path='/admin/user/add' component={UserAdd} />
               </Admin>
             )
           }}/>

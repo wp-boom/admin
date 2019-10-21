@@ -8,19 +8,14 @@ import ActionCreator from '../../store/actionCreator'
 
 class Admin extends Component{
   componentDidMount(){
-    this.props.changeTokenModalAsync()
-    // setTimeout(()=>{
-    // this.props.changeTokenModal(true)
-    //   this.props.changeTokenModalAsync()
-    // },1000)
     // 验证是否登录
-    // setTimeout(()=>{
-    //   if(false){
+    setTimeout(()=>{
+      if(false){
 
-    //   }else{
-    //     this.props.changeTokenModal(true)
-    //   }
-    // },1000)
+      }else{
+        this.props.changeTokenModal(true)
+      }
+    },1000)
   }
   render(){
     console.log(this,'22')
